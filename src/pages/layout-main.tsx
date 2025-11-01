@@ -5,9 +5,7 @@ import Text from "../components/text";
 export default function LayoutMain() {
     return (
         <>
-            <Container as="header" className="mt-3 md:mt-20">
-                Olá mundo - HEADER
-            </Container>
+            
             <main className="mt-4 md:mt-8">
                 <Outlet />
             </main>

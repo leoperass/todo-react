@@ -16,6 +16,7 @@ import SpinnerIcon from "../assets/icons/spinner.svg?react";
 import XIcon from "../assets/icons/x.svg?react";
 
 
+
 export default function PageComponents () {
     return (
         <Container>
