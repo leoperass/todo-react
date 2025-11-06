@@ -12,5 +12,5 @@ export default function LayoutMain() {
             </MainContent>
             <Footer />
         </>
-    )
+    );
 }

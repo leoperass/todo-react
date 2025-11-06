@@ -69,10 +69,10 @@ export default function Button({
     ...props
 }: ButtonProps) {
     return (
-        <button className={buttonVariants({variant,size,disabled})} {...props}>
+        <button className={buttonVariants({variant,size,disabled,className})} {...props}>
             {IconComponent && <Icon 
                 svg={IconComponent}
-                className={buttonIconVariants({variant, size})}
+                className={buttonIconVariants({variant, size,})}
             />}
             <Text variant="body-md-bold" className={buttonTextVariants({variant})}>
                 {children}
