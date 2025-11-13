@@ -22,13 +22,17 @@ export default function TaskItem({ task }: TaskItemProps) {
         task?.state === TaskState.Creating
     );
     const [taskTitle, setTaskTitle] = React.useState(task.title || "");
-    const { updateTask, updateTaskStatus } = useTask();
+    const { updateTask, updateTaskStatus, deleteTask } = useTask();
 
     function handleEditTask() {
         setIsEditing(true);
     }
 
     function handleExitEditTask() {
+        if (task.state === TaskState.Creating) {
+            deleteTask(task.id)
+        }
+
         setIsEditing(false);
     }
 
@@ -50,6 +54,10 @@ export default function TaskItem({ task }: TaskItemProps) {
         updateTaskStatus(task.id, checked);
     }
 
+    function handleDeleteTask() {
+        deleteTask(task.id);
+    }
+
     return (
         <Card size="md">
             {!IsEditing ?
@@ -66,7 +74,7 @@ export default function TaskItem({ task }: TaskItemProps) {
                         {task?.title}
                     </Text>
                     <div className="flex gap-1">
-                        <ButtonIcon type="button" icon={TrashIcon} variant="tertiary" />
+                        <ButtonIcon type="button" icon={TrashIcon} variant="tertiary"  onClick={handleDeleteTask}/>
                         <ButtonIcon type="button" icon={PencilIcon} variant="tertiary" onClick={handleEditTask} />
                     </div>
                 </div>
