@@ -8,7 +8,7 @@ export const textVariants = cva("font-sans text-gray-400", {
             "body-md": "text-base leading-6 font-normal",
             "body-md-bold": "text-base leading-6 font-bold",
         },
-        defaultVariats: {
+        defaultVariants: {
             variant: "body-md"
         }
     }
